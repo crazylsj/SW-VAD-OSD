@@ -1,2 +1,1 @@
-# TCN-with-Smoothed-and-Weighted-Losses-for-distant-VAD-and-OSD
-INTERSPEECH2025
+# Official PyTorch Implementation of " Temporal Convolutional Network with Smoothed and Weighted Losses for Distant Voice Activity and Overlapped Speech Detection (Interspeech 2025)"
