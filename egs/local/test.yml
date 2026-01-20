@@ -1,4 +1,4 @@
-gpus: "1"  # 使用GPU 0和1
+gpus: "0"  # 使用GPU 0和1
 model: tcn
 # task: count
 task: vadosd
@@ -7,7 +7,7 @@ feats:
   hop_size: 0.01
   n_feats: 80
   inject_noise: false
-log_dir: local/exp/
+log_dir: exp/tcn
 mels:
   n_mels: 40
   n_fft: 400
@@ -45,15 +45,16 @@ data:
   fs: 16000
   custom_json_folder:
   chime6_root: /mnt/sdb2/lsj/datasets/AMI/media/sam/bx500/amicorpus/audio/
-  label_train: /mnt/sdb2/lsj/datasets/AMI/media/sam/bx500/amicorpus/fa_labels/train/ 
-  label_val: /mnt/sdb2/lsj/datasets/AMI/media/sam/bx500/amicorpus/fa_labels/dev/  
+  # label_test: /datasets/AMI/media/sam/bx500/amicorpus/fa_labels/dev/ 
+  label_test: /mnt/sdb2/lsj/datasets/AMI/media/sam/bx500/amicorpus/fa_labels/eval/ 
 opt:
   learning_rate: 0.001  
+  # lr: 0.00015
   weight_decay: !!float 1e-5
 training:
-  batch_size: 32
+  batch_size: 1
   num_workers: 8
-  n_epochs: 25
+  n_epochs: 20
   gradient_clip: 5
   accumulate_batches: 1
 augmentation:
